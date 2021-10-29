@@ -361,6 +361,9 @@
     .carousel .change_outer{
       text-align: center;
     }
+    .element:nth-child(1){
+      font-size: 1.5rem;
+    }
     .main_content p{
         margin-top: 2rem ;
         font-size: 1.5rem;
