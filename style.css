@@ -121,7 +121,7 @@
     top: -1000px;
     opacity: 0;
     transition: all 0.5s ease;
-    height: 50vh;
+    height: fit-content;
     z-index: -1;
     background: #131313;
   }
@@ -131,7 +131,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 50vh;
+    height: fit-content;
     font-size: 1.6rem;
   }
   #navbar_logo {
@@ -167,7 +167,7 @@
     justify-content: center;
     align-items: center;
     width: 25%;
-    height: 60px;
+    height: fit-content;
     margin: 0;
   }
   .navbar_toggle .bar {
@@ -203,6 +203,7 @@
   max-width: 1300px;
   padding: 0 50px;
 }
+
 .main_content h1 {
   font-size: 4rem;
   background-color: #ff8177;
@@ -258,6 +259,12 @@
     transform: translateY(-18rem);
  }
 }
+/* .element:nth-child(1){
+  font-size:2rem;
+}
+.element:nth-child(2){
+  font-size: 2rem;
+} */
 
 
 
@@ -362,7 +369,10 @@
       text-align: center;
     }
     .element:nth-child(1){
-      font-size: 1.5rem;
+      font-size: 1.9rem;
+    }
+    .element:nth-child(2){
+      font-size: 1.9rem;
     }
     .main_content p{
         margin-top: 2rem ;
