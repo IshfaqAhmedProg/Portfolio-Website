@@ -221,8 +221,7 @@
 .carousel {
   position: relative;
   width: 100%;
-  text-align: center;
-  font-size: 3rem;
+  text-align: left;
   line-height: 4.5rem;
   height: 4.5rem;
   
@@ -336,6 +335,13 @@
     .main_content h2{
         font-size: 3rem;
     }
+    .carousel{
+      text-align: center;
+
+    }
+    .carousel .change_outer{
+      text-align: center;
+    }
     .main_content p{
         margin-top: 1rem ;
         font-size: 1.5rem;
@@ -344,11 +350,17 @@
 }
 @media screen and (max-width:480px) {
     .main_content h1{
-        font-size: 2rem;
+        font-size: 1rem;
         margin-top: 3rem;
     }
     .main_content h2{
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+    .carousel{
+      text-align: center;
+    }
+    .carousel .change_outer{
+      text-align: center;
     }
     .main_content p{
         margin-top: 2rem ;
@@ -358,6 +370,7 @@
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
+
 }
 /* Services CSS */
 .services{
