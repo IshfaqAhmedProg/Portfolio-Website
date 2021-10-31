@@ -1,7 +1,14 @@
-const menu = document.querySelector("#mobile-menu");
-const menuLinks = document.querySelector(".navbar_menu");
+window.onscroll = function() {
+    myFunction();
+};
 
-menu.addEventListener("click", function () {
-  menu.classList.toggle("is-active");
-  menuLinks.classList.toggle("active");
-});
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
