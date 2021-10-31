@@ -135,6 +135,19 @@ p {
     color: var(--pink200);
 }
 
+@media only screen and (max-width: 600px) {
+    .headers h1 {
+        font-size: 2.5rem;
+    }
+    .carousel {
+        line-height: 2.7rem;
+        height: 2.6rem;
+    }
+    .carousel .change_outer {
+        height: 2.6rem;
+    }
+}
+
 .head-text span {
     color: var(--gray0);
 }
