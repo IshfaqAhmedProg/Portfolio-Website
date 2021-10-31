@@ -18,6 +18,10 @@
     --body-size: 1.5rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: var(--mainfont), sans-serif;
@@ -48,6 +52,24 @@ p {
 }
 
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+
 /* -------------------------LANDING PAGE------------------------------------ */
 
 .landing-page-container {
@@ -67,11 +89,8 @@ p {
 }
 
 .headers {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
+    padding-top: 180px;
+    height: 100vh;
 }
 
 .headers h2 {
@@ -80,40 +99,15 @@ p {
 
 .headers h1 {
     color: var(--pink100);
-}
-
-.scroll-down-button {
-    color: var(--gray0);
-    margin-top: 150px;
-}
-
-.scroll-down-button a {
-    display: inline-block;
-    font-size: 30px;
-    background: var(--blue200);
-    background: linear-gradient(to top, var(--gray300) 0%, var(--pink100) 100%);
-    padding: 10px 15px 10px 15px;
-    border-radius: 4px;
-    color: var(--gray0);
-    transition: all ease 0.3s;
-}
-
-.scroll-down-button a:hover {
-    background: var(--gray0);
-    color: var(--pink300);
-    background: linear-gradient(to top, var(--gray0) 0%, var(--pink200) 100%);
-    transform: scale(1.5);
-}
-
-a:hover i {
-    transform: translateY(13px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .carousel {
     margin-top: 20px;
     position: relative;
     width: 100%;
-    text-align: left;
+    text-align: center;
     line-height: 4.5rem;
     height: 4.5rem;
 }
@@ -164,6 +158,41 @@ a:hover i {
     }
 }
 
+.scroll-down-button {
+    overflow: hidden;
+    color: var(--gray100);
+    padding-bottom: 30px;
+    padding-top: 150px;
+}
+
+.scroll-down-button a {
+    display: inline-block;
+    font-size: 30px;
+    background: var(--blue200);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, var(--pink100) 100%);
+    padding: 20px 25px 30px 25px;
+    border-radius: 4px;
+    color: var(--gray0);
+    transition: all ease 0.3s;
+}
+
+.scroll-down-button:hover a+p {
+    color: var(--pink200);
+    transition: all ease 0.3s;
+    transform: matrix(1.3, 0, 0, 1.3, 0, 50);
+}
+
+.scroll-down-button:hover a {
+    background: var(--gray0);
+    background: linear-gradient(to top, var(--pink200) 0%, rgba(0, 0, 0, 0) 100%);
+    transform: matrix(1.3, 0, 0, 1.3, 0, 50);
+}
+
+.scroll-down-button:hover i {
+    color: var(--gray0);
+    transform: translateY(9px) scaleY(1.2) scaleX(1.05);
+}
+
 
 /*-----------------------------NAVBAR------------------------------------------ */
 
@@ -173,30 +202,22 @@ a:hover i {
 }
 
 #navbar a {
-    width: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    float: inline-start;
+    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: var(--body-size);
 }
 
-.navlink {
-    background: var(--gray400);
-}
-
-.navlink a:hover {
+#navbar a:hover {
     background-color: #ddd;
     color: black;
 }
 
-.navlink a.active {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-image: radial-gradient(circle closest-corner at 50% 1%, var(--pink100), rgba(121, 121, 121, 0.3));
+#navbar a.active {
+    background-color: #04AA6D;
     color: white;
 }
 
@@ -211,8 +232,18 @@ a:hover i {
 }
 
 .sticky+.content {
-    padding-top: 60px;
+    padding-top: 150px;
 }
+
+
+/* @media screen and(max-width:768) {
+    #navbar a {
+        font-size: 5px;
+    }
+    .sticky+.content {
+        padding-top: 60px;
+    }
+} */
 
 
 /* --------------------------------**************---------------------------- */
