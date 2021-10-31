@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;800&family=Raleway:wght@100;400&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
-    <!-- ------------------------------------------LANDING PAGE---------------------------------------- -->
+    <!-- ------------------------------------------LANDING PAGE-------------------------------- -->
     <div id="landing-page">
         <div class="landing-page-container">
             <div class="overlay">
@@ -25,9 +25,9 @@
                             <div class="carousel">
                                 <div class="change_outer">
                                     <div class="change_inner">
-                                        <div class="element">Motion Graphics</div>
-                                        <div class="element">Web Developer</div>
-                                        <div class="element">3D Modeler</div>
+                                        <div class="element">Motion <span>Graphics</span> </div>
+                                        <div class="element"><span>Web</span> Developer</div>
+                                        <div class="element">3D <span>Modeler</span></div>
                                         <div class="element">Animator</div>
                                         <div class="element">Editor</div>
                                     </div>
@@ -35,9 +35,10 @@
                             </div>
                         </h1>
                     </div>
-                    <div class="scroll-down-button">
-                        <a href="#about_me" class="button"><i class="fas fa-arrow-down"></i> </a>
+                    <div id="scroll-button" class="scroll-down-button">
                         <p> More Info </p>
+                        <a href="#about_me" class="button"><i class="fas fa-angle-down"></i> </a>
+
                     </div>
                 </div>
             </div>
@@ -45,22 +46,40 @@
     </div>
     <!-- ------------------------------------------NAVBAR---------------------------------------- -->
     <div id="navbar">
-        <div class="logo"></div>
         <a class="active" href="#about_me">About Me</a>
         <a href="#tools">Tools</a>
         <a href="#gallery">Gallery</a>
         <a href="#contacts">Contact Me</a>
     </div>
-    <!-- ------------------------------------------MAIN CONTENT---------------------------------------- -->
+    <!-- ------------------------------------------MAIN CONTENT---------------------------------- -->
     <div class="content">
         <section id="about_me">
-            <h2>About Me</h2>
-
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2>About Me</h2>
+            </div>
+        </section>
+        <section id="tools">
+            <div class="container">
+                <h2>Tools</h2>
+            </div>
+        </section>
+        <section id="gallery">
+            <div class="container">
+                <h2>Gallery</h2>
+            </div>
+        </section>
+        <section id="contacts">
+            <div class="container">
+                <h2>Contact Me</h2>
+            </div>
         </section>
     </div>
-
-    <!-- ------------------------------------------Local scripts---------------------------------------- -->
+    <!-- ------------------------------------------scripts---------------------------------------- -->
     <script type="text/javascript" src="site.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://kit.fontawesome.com/749e2a7527.js" crossorigin="anonymous"></script>
 </body>
 

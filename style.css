@@ -1,6 +1,6 @@
 :root {
     --pink100: #ff8fc3;
-    --pink200: #f575d5;
+    --pink200: #ff499e;
     --pink300: #a480cf;
     --blue100: #89cdfb;
     --blue200: #779be7;
@@ -9,13 +9,28 @@
     --gray100: #e6e6e6;
     --gray200: #a6a6a6;
     --gray300: #414141;
-    --gray400: #292929;
+    --gray350: #6A4865;
+    --gray400: #222222;
     --mainfont: 'Montserrat', sans-serif;
     --bodyfont: 'Raleway', sans-serif;
     --header1-size: 4rem;
     --header2-size: 2.5rem;
     --header3-size: 2.1875rem;
     --body-size: 1.5rem;
+    --gradientb2p2: linear-gradient(to top, var(--pink200) 0%, var(--blue200) 100%);
+    --gradientp2b2: linear-gradient(to top, var(--blue200) 0%, var(--pink200) 100%);
+    --gradientp1p3: linear-gradient(to top, var(--pink300) 0%, var(--pink100) 100%);
+    --gradientp3p1: linear-gradient(360deg, var(--pink300) 0%, var(--pink100) 100%);
+    --gradientb2p3: linear-gradient(360deg, var(--blue200) 0%, var(--pink300) 100%);
+    --gradientp3b2: linear-gradient(0deg, var(--blue200) 0%, var(--pink300) 100%);
+    --gradientb2p1: linear-gradient(360deg, var(--blue200) 0%, var(--pink100) 100%);
+    --gradientp1b2: linear-gradient(0deg, var(--blue200) 0%, var(--pink100)100%);
+    --gradientg23: linear-gradient(0deg, var(--gray200) 0%, var(--gray300) 100%);
+    --gradientg32: linear-gradient(360deg, var(--gray200) 0%, var(--gray300) 100%);
+    --gradientg43: linear-gradient(0deg, var(--gray400) 0%, var(--gray300) 100%);
+    --gradientg34: linear-gradient(0deg, var(--gray300) 0%, var(--gray400) 100%);
+    --gradientg335: linear-gradient(0deg, var(--gray300) 0%, var(--gray350) 100%);
+    --gradientg353: linear-gradient(180deg, var(--gray300) 0%, var(--gray350) 100%);
 }
 
 html {
@@ -25,6 +40,19 @@ html {
 body {
     margin: 0;
     font-family: var(--mainfont), sans-serif;
+    background-color: var(--gray300);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, var(--gray300) 100%);
+}
+
+.container {
+    margin: 0;
+    height: 100vh;
+    text-align: center;
 }
 
 h1 {
@@ -82,25 +110,33 @@ p {
     background-image: url(/img/launde-morel-HzvfONwKapE-unsplash.webp);
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, var(--gray400) 100%);
-}
-
 .headers {
     padding-top: 180px;
     height: 100vh;
 }
 
+.head-text {
+    height: 50vh;
+}
+
 .headers h2 {
-    color: var(--gray0);
+    background-color: var(--pink300);
+    background-image: linear-gradient(to top, var(--blue100) 0%, var(--pink200) 100%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .headers h1 {
-    color: var(--pink100);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: 6rem;
+    color: var(--pink200);
+}
+
+.head-text span {
+    color: var(--gray0);
 }
 
 .carousel {
@@ -108,8 +144,8 @@ p {
     position: relative;
     width: 100%;
     text-align: center;
-    line-height: 4.5rem;
-    height: 4.5rem;
+    line-height: 6.35rem;
+    height: 6.5rem;
 }
 
 .carousel .change_outer {
@@ -121,7 +157,7 @@ p {
     margin-right: auto;
     top: 0;
     text-align: center;
-    height: 4.5rem;
+    height: 6.5rem;
     overflow: hidden;
 }
 
@@ -142,27 +178,29 @@ p {
     }
     22%,
     42% {
-        transform: translateY(-4.5rem);
+        transform: translateY(-6.5rem);
     }
     44%,
     64% {
-        transform: translateY(-9rem);
+        transform: translateY(-13rem);
     }
     66%,
     86% {
-        transform: translateY(-13.5rem);
+        transform: translateY(-19.5rem);
     }
     88%,
     100% {
-        transform: translateY(-18rem);
+        transform: translateY(-26rem);
     }
 }
 
+
+/*------------ scrollbutton------ */
+
 .scroll-down-button {
+    height: 50vh;
     overflow: hidden;
     color: var(--gray100);
-    padding-bottom: 30px;
-    padding-top: 150px;
 }
 
 .scroll-down-button a {
@@ -173,32 +211,35 @@ p {
     padding: 20px 25px 30px 25px;
     border-radius: 4px;
     color: var(--gray0);
-    transition: all ease 0.3s;
+    transition: all ease-in 0.3s;
 }
 
-.scroll-down-button:hover a+p {
-    color: var(--pink200);
-    transition: all ease 0.3s;
-    transform: matrix(1.3, 0, 0, 1.3, 0, 50);
+.scroll-down-button:hover p {
+    transition: opacity ease-out 0.3s;
+    opacity: 0;
 }
 
-.scroll-down-button:hover a {
+.scroll-down-button:hover a:not(i) {
     background: var(--gray0);
     background: linear-gradient(to top, var(--pink200) 0%, rgba(0, 0, 0, 0) 100%);
-    transform: matrix(1.3, 0, 0, 1.3, 0, 50);
+    transform: matrix(1.6, 0, 0, 1.2, 0, 50);
 }
 
 .scroll-down-button:hover i {
     color: var(--gray0);
-    transform: translateY(9px) scaleY(1.2) scaleX(1.05);
+    transform: matrix(1, 0, 0, 1, 0, 19);
 }
+
+
+/* --------------------------------**************---------------------------- */
 
 
 /*-----------------------------NAVBAR------------------------------------------ */
 
 #navbar {
     overflow: hidden;
-    background-color: var(--gray400);
+    background-color: var(--gray300);
+    visibility: hidden;
 }
 
 #navbar a {
@@ -217,12 +258,12 @@ p {
 }
 
 #navbar a.active {
-    background-color: #04AA6D;
+    background-color: var(--pink100);
     color: white;
 }
 
 .content {
-    padding: 16px;
+    padding-top: 16px;
 }
 
 .sticky {
@@ -232,18 +273,59 @@ p {
 }
 
 .sticky+.content {
-    padding-top: 150px;
+    padding-top: 60px;
 }
 
 
-/* @media screen and(max-width:768) {
-    #navbar a {
-        font-size: 5px;
-    }
-    .sticky+.content {
-        padding-top: 60px;
-    }
-} */
+/* --------------------------------**************---------------------------- */
+
+
+/* ------------------------------------------ABOUT ME---------------------- */
+
+#about_me .container {
+    background-image: linear-gradient(360deg, var(--gray300) 16.76%, var(--gray350) 57.94%, var(--gray300) 100%);
+}
+
+#about_me h2 {
+    background-color: var(--pink100);
+    background-image: linear-gradient(to top, var(--pink200) 0%, var(--pink300) 100%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+
+/* --------------------------------**************---------------------------- */
+
+
+/* ---------------------------------------TOOLS---------------------- */
+
+#tools .container {
+    background-image: var(--gradientg43);
+}
+
+
+/* --------------------------------**************---------------------------- */
+
+
+/* ---------------------------------------GALLERY---------------------- */
+
+#gallery .container {
+    background-image: var(--gradientg34);
+}
+
+
+/* --------------------------------**************---------------------------- */
+
+
+/* ----------------------------------------CONTACTS---------------------- */
+
+#contacts .container {
+    background-image: var(--gradientg23);
+}
 
 
 /* --------------------------------**************---------------------------- */
